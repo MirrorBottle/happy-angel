@@ -15,13 +15,13 @@ export default class Banner extends React.Component {
     render() {
         return (
             <div className="jumbotron jumbotron-fluid ptb-100 home-banner bg-custom-dark">
-                <div className="container pt-50">
+                <div className="container pt-50 d-flex flex-column justify-content-center align-items-center">
                     <div className="row">
-                        <div className="col-md-6 col-12 d-flex flex-column wow fadeIn">
+                        <div className="col-md-6 d-sm-none d-none d-md-block d-lg-block d-xl-block col-12  wow fadeIn">
                             <img src='/static/logo.png' alt="ShiroKaze Banner" className="img-fluid w-100 h-100" />
                             <h1 className=" text-center title">HAPPY <br />ANGEL</h1>
                         </div>
-                        <div className="col-md-6 col-12 d-sm-none d-none d-md-block d-lg-block d-xl-block wow fadeIn">
+                        <div className="col-md-6 col-12  wow fadeIn">
                             <div className="container">
                                 <h2 className="text-center">selamat datang, tuan. <br />Bagaimana Kabarmu?</h2>
                                 <form className="pt-50 mb-4">
