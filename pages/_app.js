@@ -12,13 +12,13 @@ export default class MyApp extends App {
         return (
             <React.Fragment>
                 <DefaultSeo
-                    title="Shirokaze - Game Maker and Website Developer"
-                    description="A team of young game maker from Indonesia"
+                    title="Happy Angel - Site for Your Pleasure"
+                    description="Based on Rinju Comic's Happy Angel"
                     openGraph={{
                         type: 'website',
                         locale: 'id-ID',
                         url: '',
-                        site_name: 'Shirokaze',
+                        site_name: 'Happy Angel',
                     }}
                 />
                 <Component {...pageProps} />
