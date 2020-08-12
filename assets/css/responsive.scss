@@ -1,0 +1,106 @@
+// Colors
+$main_black: #333;
+$secondary_black: rgb(29, 29, 29);
+$white_color: #fff;
+
+@media(max-width: 768px) {
+    .navbar-nav {
+        .nav-item {
+            margin-right: 30px;
+            position: relative;
+            transition: .2s;
+            padding-left: 10px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 0%;
+                right: 50%;
+                height: 2px;
+                border-radius: 30px;
+                background: $main_black;
+                transition: .2s;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                width: 0%;
+                left: 50%;
+                height: 2px;
+                border-radius: 30px;
+                background: $main_black;
+                transition: .2s;
+            }
+
+            &:hover {
+                background: $main_black;
+
+                &::before,
+                &::after {
+                    width: 0% !important;
+                }
+
+                .nav-link {
+                    color: $white_color;
+                }
+            }
+
+            .nav-link {
+                font-weight: 700 !important;
+            }
+        }
+    }
+
+    .home-banner {
+        height: auto !important;
+        padding-top: 30px;
+        padding-bottom: 20px !important;
+    }
+
+    .typed-banner {
+        display: block;
+    }
+
+    .special-home-banner {
+        h3 {
+            font-size: 1.4rem!important;
+        }
+    }
+    .open-words {
+        h3 {
+            font-size: 1.2rem!important;
+        }
+    }
+
+    #services {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .service-title {
+            text-transform: capitalize;
+            font-size: 4rem;
+            text-align: center;
+            opacity: 1;
+        }
+
+        .card {
+            margin-top: 1rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+            width: 90% !important;
+        }
+    }
+
+    .page-footer {
+        .page-footer-brand {
+            display: flex;
+            align-items: center!important;
+            width: 100%;
+        }
+    }
+}
