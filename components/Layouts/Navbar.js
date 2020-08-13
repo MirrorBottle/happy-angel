@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import user from "./../../user";
 import {
     Collapse,
     Navbar,
@@ -13,6 +14,7 @@ import {
     DropdownItem,
     NavbarText
 } from 'reactstrap';
+import { Link } from "../../routes";
 export default class NavbarComponent extends Component {
     state = {
         isOpen: false
@@ -33,15 +35,39 @@ export default class NavbarComponent extends Component {
     render() {
         return (
             <Navbar color="dark" light expand="md" id="navbar" fixed="top">
-                <NavbarBrand href="/">
-                    <h3 className="text-uppercase">happy angel</h3>
-                </NavbarBrand>
+                <Link route="/">
+                    <NavbarBrand style={{ cursor: "pointer" }}>
+                        <h3 className="text-uppercase">happy angel</h3>
+                    </NavbarBrand>
+                </Link>
+
                 <NavbarToggler className={`${this.state.isOpen ? 'active' : ''}`} onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">About</NavLink>
+                            <Link route="about">
+                                <NavLink style={{ cursor: "pointer" }}>About</NavLink>
+                            </Link>
                         </NavItem>
+                        {user("masterId") !== null && (
+                            <UncontrolledDropdown nav>
+                                <DropdownToggle nav>{user("username")}</DropdownToggle>
+                                <DropdownMenu className="dropdown-menu-arrow" right>
+                                    <DropdownItem>
+                                        <span>Profile</span>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <span>Top Up</span>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <span>Settings</span>
+                                    </DropdownItem>
+                                    <DropdownItem>
+                                        <span>Logout</span>
+                                    </DropdownItem>
+                                </DropdownMenu>
+                            </UncontrolledDropdown>
+                        )}
                     </Nav>
                 </Collapse>
             </Navbar>

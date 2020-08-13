@@ -119,6 +119,18 @@ body {
     }
 
     .navbar-nav {
+        .dropdown-menu-arrow {
+            border-radius: 0px;
+            background: $main_black;
+            box-shadow: 5px 3px 3px rgba(0,0,0,.8);
+            .dropdown-item {
+                color: $white_color!important;
+
+                &:hover {
+                    background: $secondary_black;
+                }
+            }
+        }
         .nav-item {
             margin-right: 30px;
             position: relative;
@@ -311,3 +323,45 @@ body {
     }
 }
 
+.about {
+    .about-make {
+        a {
+            transition: .4s;
+            &:hover {
+                font-weight: bold;
+                text-decoration: none;
+                h1 {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+            h1 {
+                position: relative;
+                display: inline;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 5px;
+                    width: 0%;
+                    bottom: -2px;
+                    background: $white_color;
+                    transition: .4s;
+                }
+            }
+        }
+    }
+}
+
+#home {
+    min-height: 100vh;
+    .menu {
+        min-height: 30vh;
+    }
+    .middle-menu {
+        @media(min-width: 768px) {
+            border-left: 2px solid $white_color;
+            border-right: 2px solid $white_color;
+        }
+    }
+}

@@ -1,2 +1,6 @@
 const nextRoutes = require('next-routes')
-module.exports = nextRoutes()
+const routes = (module.exports = nextRoutes())
+
+routes.add('home', '/home', 'home');
+routes.add('about', '/about', 'about');
+routes.add('profile', '/profile', 'profile');
