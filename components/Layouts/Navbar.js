@@ -17,7 +17,8 @@ import {
 import { Link } from "../../routes";
 export default class NavbarComponent extends Component {
     state = {
-        isOpen: false
+        isOpen: false,
+        isDropdownShow: false,
     }
     toggle = () => {
         this.setState({ isOpen: !this.state.isOpen })
@@ -31,6 +32,11 @@ export default class NavbarComponent extends Component {
                 elementId.classList.remove("is-sticky");
             }
         });
+        if (user("masterId") !== null) {
+            this.setState({
+                isDropdownShow: true
+            });
+        }
     }
     render() {
         return (
@@ -49,7 +55,7 @@ export default class NavbarComponent extends Component {
                                 <NavLink style={{ cursor: "pointer" }}>About</NavLink>
                             </Link>
                         </NavItem>
-                        {user("masterId") !== null && (
+                        {this.state.isDropdownShow && (
                             <UncontrolledDropdown nav>
                                 <DropdownToggle nav>{user("username")}</DropdownToggle>
                                 <DropdownMenu className="dropdown-menu-arrow" right>
